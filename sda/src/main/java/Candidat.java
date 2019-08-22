@@ -4,12 +4,15 @@ public class Candidat {
    private String lastName;
    private int levelComp;
    private String nameDep;
+   private StatusCandidat statusCandidat;
+
 
     public Candidat(String name, String lastName, int levelComp, String nameDep){
         this.name = name;
         this.lastName = lastName;
         this.levelComp = levelComp;
         this.nameDep = nameDep;
+        this.statusCandidat = StatusCandidat.WAITING;
     }
 
     public String getName() {
@@ -42,5 +45,13 @@ public class Candidat {
 
     public void setNameDep(String nameDep) {
         this.nameDep = nameDep;
+    }
+
+    public StatusCandidat getStatusCandidat() {
+        return statusCandidat;
+    }
+
+    public void setStatusCandidat(StatusCandidat statusCandidat) {
+        this.statusCandidat = statusCandidat;
     }
 }

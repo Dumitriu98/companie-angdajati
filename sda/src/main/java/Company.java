@@ -7,9 +7,10 @@ public class Company {
     private List <Candidat> employees;
     private List<Department> departments;
 
-    public Company(String name, List<Candidat> employees) {
+    public Company(String name, List<Candidat> employees, List<Department> departments) {
         this.name = name;
         this.employees = employees;
+        this.departments = departments;
     }
 
     public String getName() {
@@ -28,20 +29,27 @@ public class Company {
         this.employees = employees;
     }
 
-    //to be implemented
-    public void recruits(Candidat candidat){
-
-        if(){
-            throw new IncapacitateEvaluare();
-        }
-
-        try{
-
-
-        }catch(IncapacitateEvaluare e){
-            System.out.println("Candidatul nu indeplineste cerintele cerute!");
-        }
-
+    public List<Department> getDepartments() {
+        return departments;
     }
 
+    public void setDepartments(List<Department> departments) {
+        this.departments = departments;
+    }
+
+    //to be implemented
+    public void recruits(Candidat candidat){
+        if(candidat.getNameDep().equalsIgnoreCase("Martketing")){
+            Marketing m = new Marketing();
+            StatusCandidat status = m.evaluates(candidat);
+            candidat.setStatusCandidat(status);
+
+        }else if(candidat.getNameDep().equalsIgnoreCase("Production")){
+            Production p = new Production();
+            StatusCandidat status = p.evaluates(candidat);
+            candidat.setStatusCandidat(status);
+        }else {
+            throw new EvaluateIncapacity("The candidat can't be evaluated!");
+        }
+    }
 }

@@ -1,11 +1,12 @@
 public class Department {
     private String name;
-    static final int levelMinCompetition = 3;
+    private int levelMinCompetition;
 
     public Department(){}
 
-    public Department(String name) {
+    public Department(String name, int levelMinCompetition) {
         this.name = name;
+        this.levelMinCompetition = levelMinCompetition;
     }
 
     public String getName() {
@@ -16,7 +17,11 @@ public class Department {
         this.name = name;
     }
 
-    public static int getLevelMinCompetition() {
+    public int getLevelMinCompetition() {
         return levelMinCompetition;
+    }
+
+    public void setLevelMinCompetition(int levelMinCompetition) {
+        this.levelMinCompetition = levelMinCompetition;
     }
 }
