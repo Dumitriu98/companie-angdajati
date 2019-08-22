@@ -7,10 +7,8 @@ public class Company {
     private List <Candidat> employees;
     private List<Department> departments;
 
-    public Company(String name, List<Candidat> employees, List<Department> departments) {
+    public Company(String name) {
         this.name = name;
-        this.employees = employees;
-        this.departments = departments;
     }
 
     public String getName() {
